@@ -46,6 +46,14 @@ const observer = new IntersectionObserver(function (entries) {
 }, observerOptions);
 
 // Observar todas as seções
+document.querySelectorAll('section').forEach(section => {
+    section.style.opacity = '0';
+    section.style.transform = 'translateY(20px)';
+    section.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+    observer.observe(section);
+});
+
+// Observar todas as seções
 document.querySelectorAll('.scroll-animate').forEach(section => {
     observer.observe(section);
 });
